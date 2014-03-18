@@ -13,12 +13,12 @@ namespace LightBus.Example.Wcf.Server
 
         public void SendCommand(CreateCustomerCommand command)
         {
-            _bus.Send(command);
+            _bus.SendAsync(command).Wait();
         }
 
         public GetAllCustomersResponse SendQuery(GetAllCustomersQuery query)
         {
-            return _bus.Send(query);
+            return _bus.SendAsync(query).Result;
         }
     }
 }

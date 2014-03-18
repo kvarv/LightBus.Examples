@@ -1,13 +1,14 @@
 ﻿using System;
+using System.Threading.Tasks;
 using LightBus.Example.Wcf.Contracts;
 
 namespace LightBus.Example.Wcf.Server
 {
     public class CustomerCreatedHandler : IHandleMessages<CustomerCreatedEvent>
     {
-        public void Handle(CustomerCreatedEvent command)
+        public Task HandleAsync(CustomerCreatedEvent command)
         {
-            Console.WriteLine("Customer with id {0} created.", command.CustomerId);            
+            return TaskExt.Delay(50).ContinueWith(tsk => Console.WriteLine("Customer with id {0} created.", command.CustomerId));
         }
     }
 }

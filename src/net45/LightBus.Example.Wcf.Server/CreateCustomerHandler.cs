@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using LightBus.Example.Wcf.Contracts;
 
 namespace LightBus.Example.Wcf.Server
@@ -12,12 +13,12 @@ namespace LightBus.Example.Wcf.Server
             _bus = bus;
         }
 
-        public void Handle(CreateCustomerCommand command)
+        public async Task HandleAsync(CreateCustomerCommand command)
         {
             Console.WriteLine("Creating customer {0}.", command.Name);
             var customerId = Guid.NewGuid();
             Db.Customers.Add(new Customer { Id = customerId, Name = command.Name });
-            _bus.Publish(new CustomerCreatedEvent { CustomerId = customerId });
+            await _bus.PublishAsync(new CustomerCreatedEvent { CustomerId = customerId });
         }
     }
 }
