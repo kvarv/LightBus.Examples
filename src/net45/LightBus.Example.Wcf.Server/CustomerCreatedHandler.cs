@@ -8,7 +8,7 @@ namespace LightBus.Example.Wcf.Server
     {
         public async Task HandleAsync(CustomerCreatedEvent command)
         {
-            await Task.Delay(50);
+            await Task.Delay(10);
             Console.WriteLine("Customer with id {0} created.", command.CustomerId);
         }
     }

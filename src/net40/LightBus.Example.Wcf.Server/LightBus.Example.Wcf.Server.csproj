@@ -36,9 +36,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LightBus, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="LightBus, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\LightBus.2.0.0\lib\net40\LightBus.dll</HintPath>
+      <HintPath>..\packages\LightBus.2.0.1\lib\net40\LightBus.dll</HintPath>
     </Reference>
     <Reference Include="LightInject, Version=3.0.1.5, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -66,6 +66,7 @@
     <Compile Include="Db.cs" />
     <Compile Include="GetAllCustomersHandler.cs" />
     <Compile Include="LightInjectServiceHostFactory.cs" />
+    <Compile Include="LoggingHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
